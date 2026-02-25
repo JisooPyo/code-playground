@@ -5,18 +5,18 @@ on:
     branches:
       - main
       - develop
-      - 'feature/**'
+      - "feature/**"
   pull_request:
     branches:
       - main
       - develop
 
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: ap-northeast-2
   AWS_ACCOUNT_ID: 851725513597
-  ECR_REGISTRY: 851725513597.dkr.ecr.us-east-1.amazonaws.com
-  BACKEND_IMAGE: 851725513597.dkr.ecr.us-east-1.amazonaws.com/code-playground-backend
-  FRONTEND_IMAGE: 851725513597.dkr.ecr.us-east-1.amazonaws.com/code-playground-frontend
+  ECR_REGISTRY: 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com
+  BACKEND_IMAGE: 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-backend
+  FRONTEND_IMAGE: 851725513597.dkr.ecr.ap-northeast-2.amazonaws.com/code-playground-frontend
   ECS_CLUSTER: code-playground-production
 
 jobs:
@@ -30,8 +30,8 @@ jobs:
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
-          distribution: 'temurin'
+          java-version: "21"
+          distribution: "temurin"
 
       - name: Cache Gradle packages
         uses: actions/cache@v3
@@ -70,7 +70,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install dependencies
         working-directory: ./apps/frontend
