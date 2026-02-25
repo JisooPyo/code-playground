@@ -120,6 +120,7 @@ jobs:
           context: ./apps/backend
           platforms: linux/amd64
           push: true
+          provenance: false
           tags: |
             ${{ env.BACKEND_IMAGE }}:${{ github.sha }}
             ${{ env.BACKEND_IMAGE }}:latest
@@ -132,6 +133,7 @@ jobs:
           context: ./apps/frontend
           platforms: linux/amd64
           push: true
+          provenance: false
           tags: |
             ${{ env.FRONTEND_IMAGE }}:${{ github.sha }}
             ${{ env.FRONTEND_IMAGE }}:latest
